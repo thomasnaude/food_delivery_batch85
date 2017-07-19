@@ -17,4 +17,10 @@ class MealsController
     meals = @repo.all
     @view.display(meals)
   end
+
+  def destroy
+    list
+    meal_id = @view.ask_for(:meal).to_i
+    @repo.destroy(meal_id)
+  end
 end

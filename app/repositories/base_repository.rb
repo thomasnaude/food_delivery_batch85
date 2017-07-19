@@ -16,6 +16,10 @@ class BaseRepository
     write_csv
   end
 
+  def find(id)
+    @elements.find { |element| element.id == id.to_i }
+  end
+
   private
 
   def load_csv
